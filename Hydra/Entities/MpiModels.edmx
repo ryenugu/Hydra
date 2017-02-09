@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MCM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MpiEquityChars_Test">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="PeriodEnding" />
+          </Key>
+          <Property Name="ProductId" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="PeriodEnding" Type="datetime" Nullable="false" />
+          <Property Name="FiveYearDividendGrowth" Type="float" />
+          <Property Name="FiveYearEPSGrowth" Type="float" />
+          <Property Name="BookToPrice" Type="float" />
+          <Property Name="DebtToEquity" Type="float" />
+          <Property Name="EarningsToPrice" Type="float" />
+          <Property Name="EquityBeta" Type="float" />
+          <Property Name="EquityRSquared" Type="float" />
+          <Property Name="EquityYield" Type="float" />
+          <Property Name="NumberOfstocks" Type="float" />
+          <Property Name="PriceToBook" Type="float" />
+          <Property Name="PriceToEarnings" Type="float" />
+          <Property Name="PriceToSales" Type="float" />
+          <Property Name="Turnover" Type="float" />
+          <Property Name="ReturnOnEquity" Type="float" />
+          <Property Name="WilshireSizeScore" Type="float" />
+          <Property Name="WilshireStyleScore" Type="float" />
+          <Property Name="Percentcash" Type="float" />
+          <Property Name="Forward5YearEPSGrowth" Type="float" />
+          <Property Name="ForwardPE" Type="float" />
+          <Property Name="wtdAvgMarketCap" Type="float" />
+          <Property Name="MedianMarketCap" Type="float" />
+          <Property Name="PriceToCashFlow" Type="float" />
+          <Property Name="LastHoldingsDate" Type="datetime" />
+          <Property Name="Hist3YrSalesGrowth" Type="float" />
+          <Property Name="fHist3YrEPSGrowth" Type="float" />
+          <Property Name="52WeekReturn" Type="float" />
+          <Property Name="ROA" Type="float" />
+        </EntityType>
+        <EntityType Name="MpiFixedIncomeChars_Test">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="PeriodEnding" />
+          </Key>
+          <Property Name="ProductID" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="PeriodEnding" Type="datetime" Nullable="false" />
+          <Property Name="A" Type="float" />
+          <Property Name="AA" Type="float" />
+          <Property Name="AAA" Type="float" />
+          <Property Name="AverageQuality" Type="nvarchar" MaxLength="55" />
+          <Property Name="B" Type="float" />
+          <Property Name="BB" Type="float" />
+          <Property Name="BBB" Type="float" />
+          <Property Name="LessB" Type="float" />
+          <Property Name="Govt" Type="float" />
+          <Property Name="NR" Type="float" />
+          <Property Name="NumberofBonds" Type="float" />
+          <Property Name="NumberofStocks" Type="float" />
+          <Property Name="TurnOver" Type="float" />
+          <Property Name="YieldtoMaturity" Type="float" />
+          <Property Name="DurMore10" Type="float" />
+          <Property Name="DurLess1" Type="float" />
+          <Property Name="DurLess10" Type="float" />
+          <Property Name="DurLess2" Type="float" />
+          <Property Name="DurLess3" Type="float" />
+          <Property Name="DurLess4" Type="float" />
+          <Property Name="DurLess5" Type="float" />
+          <Property Name="DurLess6" Type="float" />
+          <Property Name="DurLess7" Type="float" />
+          <Property Name="DurLess8" Type="float" />
+          <Property Name="DurLess9" Type="float" />
+          <Property Name="DurationEffective" Type="float" />
+          <Property Name="AvgQuality" Type="float" />
+          <Property Name="Convexity" Type="float" />
+        </EntityType>
+        <EntityType Name="MpiHeader_Test">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="AssetClassId" Type="int" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROVIDER" Type="nvarchar" MaxLength="50" />
+          <Property Name="HCAUNIVERSE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TICKER" Type="nvarchar" MaxLength="5" />
+          <Property Name="CUSIP" Type="nvarchar" MaxLength="10" />
+          <Property Name="MINIMUM" Type="float" />
+          <Property Name="GROSSNET" Type="nvarchar" MaxLength="50" />
+          <Property Name="EXPENSERATIO" Type="float" />
+          <Property Name="PORTDATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSETCLASS" Type="nvarchar" MaxLength="255" />
+          <Property Name="OPENCLOSED" Type="nvarchar" MaxLength="50" />
+          <Property Name="MGRBENCHMARK" Type="nvarchar" MaxLength="50" />
+          <Property Name="HCABENCHMARK" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASSETS" Type="float" />
+          <Property Name="AlternateMappingID" Type="nvarchar" MaxLength="255" />
+          <Property Name="MapReturns" Type="nvarchar" MaxLength="50" />
+          <Property Name="MapReturnsBeforeOrAfter" Type="nvarchar" MaxLength="50" />
+          <Property Name="InceptionDate" Type="datetime" />
+          <Property Name="FootNote" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsIndex" Type="nvarchar" MaxLength="10" />
+          <Property Name="SubType" Type="nvarchar" MaxLength="30" />
+          <Property Name="PrimaryBMID" Type="nvarchar" MaxLength="50" />
+          <Property Name="StylusTemplate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACID" Type="int" />
+          <Property Name="StylusUnvID" Type="int" />
+          <Property Name="StylusFundID" Type="int" />
+        </EntityType>
+        <EntityType Name="MpiReturns_Test">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Rtndate" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="55" Nullable="false" />
+          <Property Name="Rtndate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Rtnvalue" Type="float" />
+        </EntityType>
+        <EntityType Name="TblAssetClasses">
+          <Key>
+            <PropertyRef Name="AssetID" />
+          </Key>
+          <Property Name="AssetID" Type="float" Nullable="false" />
+          <Property Name="AssetName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BenchmarkID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BenchmarkShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="UniverseID" Type="nvarchar" MaxLength="255" />
+          <Property Name="UniverseName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssetClassCurrentCoverage" Type="nvarchar" MaxLength="50" />
+          <Property Name="SSMA_TimeStamp" Type="binary" MaxLength="8" />
+        </EntityType>
+        <Association Name="FK_MpiReturns_Test_MpiHeader_Test">
+          <End Role="MpiHeader_Test" Type="Self.MpiHeader_Test" Multiplicity="1" />
+          <End Role="MpiReturns_Test" Type="Self.MpiReturns_Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MpiHeader_Test">
+              <PropertyRef Name="CODE" />
+            </Principal>
+            <Dependent Role="MpiReturns_Test">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MCMStoreContainer">
+          <EntitySet Name="MpiEquityChars_Test" EntityType="Self.MpiEquityChars_Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MpiFixedIncomeChars_Test" EntityType="Self.MpiFixedIncomeChars_Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MpiHeader_Test" EntityType="Self.MpiHeader_Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MpiReturns_Test" EntityType="Self.MpiReturns_Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAssetClasses" EntityType="Self.TblAssetClasses" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MpiReturns_Test_MpiHeader_Test" Association="Self.FK_MpiReturns_Test_MpiHeader_Test">
+            <End Role="MpiHeader_Test" EntitySet="MpiHeader_Test" />
+            <End Role="MpiReturns_Test" EntitySet="MpiReturns_Test" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MCM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MpiEquityChars_Test">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="PeriodEnding" />
+          </Key>
+          <Property Name="ProductId" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PeriodEnding" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FiveYearDividendGrowth" Type="Double" />
+          <Property Name="FiveYearEPSGrowth" Type="Double" />
+          <Property Name="BookToPrice" Type="Double" />
+          <Property Name="DebtToEquity" Type="Double" />
+          <Property Name="EarningsToPrice" Type="Double" />
+          <Property Name="EquityBeta" Type="Double" />
+          <Property Name="EquityRSquared" Type="Double" />
+          <Property Name="EquityYield" Type="Double" />
+          <Property Name="NumberOfstocks" Type="Double" />
+          <Property Name="PriceToBook" Type="Double" />
+          <Property Name="PriceToEarnings" Type="Double" />
+          <Property Name="PriceToSales" Type="Double" />
+          <Property Name="Turnover" Type="Double" />
+          <Property Name="ReturnOnEquity" Type="Double" />
+          <Property Name="WilshireSizeScore" Type="Double" />
+          <Property Name="WilshireStyleScore" Type="Double" />
+          <Property Name="Percentcash" Type="Double" />
+          <Property Name="Forward5YearEPSGrowth" Type="Double" />
+          <Property Name="ForwardPE" Type="Double" />
+          <Property Name="wtdAvgMarketCap" Type="Double" />
+          <Property Name="MedianMarketCap" Type="Double" />
+          <Property Name="PriceToCashFlow" Type="Double" />
+          <Property Name="LastHoldingsDate" Type="DateTime" Precision="3" />
+          <Property Name="Hist3YrSalesGrowth" Type="Double" />
+          <Property Name="fHist3YrEPSGrowth" Type="Double" />
+          <Property Name="C52WeekReturn" Type="Double" />
+          <Property Name="ROA" Type="Double" />
+          <NavigationProperty Name="MpiHeader_Test" Relationship="MCM.MpiHeader_TestMpiEquityChars_Test" FromRole="MpiEquityChars_Test" ToRole="MpiHeader_Test" />
+        </EntityType>
+        <EntityType Name="MpiFixedIncomeChars_Test">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="PeriodEnding" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PeriodEnding" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="A" Type="Double" />
+          <Property Name="AA" Type="Double" />
+          <Property Name="AAA" Type="Double" />
+          <Property Name="AverageQuality" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="Double" />
+          <Property Name="BB" Type="Double" />
+          <Property Name="BBB" Type="Double" />
+          <Property Name="LessB" Type="Double" />
+          <Property Name="Govt" Type="Double" />
+          <Property Name="NR" Type="Double" />
+          <Property Name="NumberofBonds" Type="Double" />
+          <Property Name="NumberofStocks" Type="Double" />
+          <Property Name="TurnOver" Type="Double" />
+          <Property Name="YieldtoMaturity" Type="Double" />
+          <Property Name="DurMore10" Type="Double" />
+          <Property Name="DurLess1" Type="Double" />
+          <Property Name="DurLess10" Type="Double" />
+          <Property Name="DurLess2" Type="Double" />
+          <Property Name="DurLess3" Type="Double" />
+          <Property Name="DurLess4" Type="Double" />
+          <Property Name="DurLess5" Type="Double" />
+          <Property Name="DurLess6" Type="Double" />
+          <Property Name="DurLess7" Type="Double" />
+          <Property Name="DurLess8" Type="Double" />
+          <Property Name="DurLess9" Type="Double" />
+          <Property Name="DurationEffective" Type="Double" />
+          <Property Name="AvgQuality" Type="Double" />
+          <Property Name="Convexity" Type="Double" />
+          <NavigationProperty Name="MpiHeader_Test" Relationship="MCM.MpiHeader_TestMpiFixedIncomeChars_Test" FromRole="MpiFixedIncomeChars_Test" ToRole="MpiHeader_Test" />
+        </EntityType>
+        <EntityType Name="MpiHeader_Test">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssetClassId" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PROVIDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HCAUNIVERSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TICKER" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CUSIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MINIMUM" Type="Double" />
+          <Property Name="GROSSNET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EXPENSERATIO" Type="Double" />
+          <Property Name="PORTDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSETCLASS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OPENCLOSED" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MGRBENCHMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HCABENCHMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASSETS" Type="Double" />
+          <Property Name="AlternateMappingID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MapReturns" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MapReturnsBeforeOrAfter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InceptionDate" Type="DateTime" Precision="3" />
+          <Property Name="FootNote" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsIndex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SubType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryBMID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StylusTemplate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACID" Type="Int32" />
+          <Property Name="StylusUnvID" Type="Int32" />
+          <Property Name="StylusFundID" Type="Int32" />
+          <NavigationProperty Name="MpiReturns_Test" Relationship="Self.FK_MpiReturns_Test_MpiHeader_Test" FromRole="MpiHeader_Test" ToRole="MpiReturns_Test" />
+        </EntityType>
+        <EntityType Name="MpiReturns_Test">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Rtndate" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rtndate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Rtnvalue" Type="Double" />
+          <NavigationProperty Name="MpiHeader_Test" Relationship="Self.FK_MpiReturns_Test_MpiHeader_Test" FromRole="MpiReturns_Test" ToRole="MpiHeader_Test" />
+        </EntityType>
+        <EntityType Name="TblAssetClass">
+          <Key>
+            <PropertyRef Name="AssetID" />
+          </Key>
+          <Property Name="AssetID" Type="Double" Nullable="false" />
+          <Property Name="AssetName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BenchmarkID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BenchmarkShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UniverseID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UniverseName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssetClassCurrentCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" />
+        </EntityType>
+        <Association Name="FK_MpiReturns_Test_MpiHeader_Test">
+          <End Role="MpiHeader_Test" Type="Self.MpiHeader_Test" Multiplicity="1" />
+          <End Role="MpiReturns_Test" Type="Self.MpiReturns_Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MpiHeader_Test">
+              <PropertyRef Name="CODE" />
+            </Principal>
+            <Dependent Role="MpiReturns_Test">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MCE" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MpiEquityChars_Test" EntityType="Self.MpiEquityChars_Test" />
+          <EntitySet Name="MpiFixedIncomeChars_Test" EntityType="Self.MpiFixedIncomeChars_Test" />
+          <EntitySet Name="MpiHeader_Test" EntityType="Self.MpiHeader_Test" />
+          <EntitySet Name="MpiReturns_Test" EntityType="Self.MpiReturns_Test" />
+          <EntitySet Name="TblAssetClasses" EntityType="Self.TblAssetClass" />
+          <AssociationSet Name="FK_MpiReturns_Test_MpiHeader_Test" Association="Self.FK_MpiReturns_Test_MpiHeader_Test">
+            <End Role="MpiHeader_Test" EntitySet="MpiHeader_Test" />
+            <End Role="MpiReturns_Test" EntitySet="MpiReturns_Test" />
+          </AssociationSet>
+          <AssociationSet Name="MpiHeader_TestMpiFixedIncomeChars_Test" Association="MCM.MpiHeader_TestMpiFixedIncomeChars_Test">
+            <End Role="MpiHeader_Test" EntitySet="MpiHeader_Test" />
+            <End Role="MpiFixedIncomeChars_Test" EntitySet="MpiFixedIncomeChars_Test" />
+          </AssociationSet>
+          <AssociationSet Name="MpiHeader_TestMpiEquityChars_Test" Association="MCM.MpiHeader_TestMpiEquityChars_Test">
+            <End Role="MpiHeader_Test" EntitySet="MpiHeader_Test" />
+            <End Role="MpiEquityChars_Test" EntitySet="MpiEquityChars_Test" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="MpiHeader_TestMpiFixedIncomeChars_Test">
+          <End Type="MCM.MpiHeader_Test" Role="MpiHeader_Test" Multiplicity="1" />
+          <End Type="MCM.MpiFixedIncomeChars_Test" Role="MpiFixedIncomeChars_Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MpiHeader_Test">
+              <PropertyRef Name="CODE" />
+            </Principal>
+            <Dependent Role="MpiFixedIncomeChars_Test">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MpiHeader_TestMpiEquityChars_Test">
+          <End Type="MCM.MpiHeader_Test" Role="MpiHeader_Test" Multiplicity="1" />
+          <End Type="MCM.MpiEquityChars_Test" Role="MpiEquityChars_Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MpiHeader_Test">
+              <PropertyRef Name="CODE" />
+            </Principal>
+            <Dependent Role="MpiEquityChars_Test">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MCMStoreContainer" CdmEntityContainer="MCE">
+          <EntitySetMapping Name="MpiEquityChars_Test">
+            <EntityTypeMapping TypeName="MCM.MpiEquityChars_Test">
+              <MappingFragment StoreEntitySet="MpiEquityChars_Test">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PeriodEnding" ColumnName="PeriodEnding" />
+                <ScalarProperty Name="FiveYearDividendGrowth" ColumnName="FiveYearDividendGrowth" />
+                <ScalarProperty Name="FiveYearEPSGrowth" ColumnName="FiveYearEPSGrowth" />
+                <ScalarProperty Name="BookToPrice" ColumnName="BookToPrice" />
+                <ScalarProperty Name="DebtToEquity" ColumnName="DebtToEquity" />
+                <ScalarProperty Name="EarningsToPrice" ColumnName="EarningsToPrice" />
+                <ScalarProperty Name="EquityBeta" ColumnName="EquityBeta" />
+                <ScalarProperty Name="EquityRSquared" ColumnName="EquityRSquared" />
+                <ScalarProperty Name="EquityYield" ColumnName="EquityYield" />
+                <ScalarProperty Name="NumberOfstocks" ColumnName="NumberOfstocks" />
+                <ScalarProperty Name="PriceToBook" ColumnName="PriceToBook" />
+                <ScalarProperty Name="PriceToEarnings" ColumnName="PriceToEarnings" />
+                <ScalarProperty Name="PriceToSales" ColumnName="PriceToSales" />
+                <ScalarProperty Name="Turnover" ColumnName="Turnover" />
+                <ScalarProperty Name="ReturnOnEquity" ColumnName="ReturnOnEquity" />
+                <ScalarProperty Name="WilshireSizeScore" ColumnName="WilshireSizeScore" />
+                <ScalarProperty Name="WilshireStyleScore" ColumnName="WilshireStyleScore" />
+                <ScalarProperty Name="Percentcash" ColumnName="Percentcash" />
+                <ScalarProperty Name="Forward5YearEPSGrowth" ColumnName="Forward5YearEPSGrowth" />
+                <ScalarProperty Name="ForwardPE" ColumnName="ForwardPE" />
+                <ScalarProperty Name="wtdAvgMarketCap" ColumnName="wtdAvgMarketCap" />
+                <ScalarProperty Name="MedianMarketCap" ColumnName="MedianMarketCap" />
+                <ScalarProperty Name="PriceToCashFlow" ColumnName="PriceToCashFlow" />
+                <ScalarProperty Name="LastHoldingsDate" ColumnName="LastHoldingsDate" />
+                <ScalarProperty Name="Hist3YrSalesGrowth" ColumnName="Hist3YrSalesGrowth" />
+                <ScalarProperty Name="fHist3YrEPSGrowth" ColumnName="fHist3YrEPSGrowth" />
+                <ScalarProperty Name="C52WeekReturn" ColumnName="52WeekReturn" />
+                <ScalarProperty Name="ROA" ColumnName="ROA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MpiFixedIncomeChars_Test">
+            <EntityTypeMapping TypeName="MCM.MpiFixedIncomeChars_Test">
+              <MappingFragment StoreEntitySet="MpiFixedIncomeChars_Test">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PeriodEnding" ColumnName="PeriodEnding" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="AA" ColumnName="AA" />
+                <ScalarProperty Name="AAA" ColumnName="AAA" />
+                <ScalarProperty Name="AverageQuality" ColumnName="AverageQuality" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="BB" ColumnName="BB" />
+                <ScalarProperty Name="BBB" ColumnName="BBB" />
+                <ScalarProperty Name="LessB" ColumnName="LessB" />
+                <ScalarProperty Name="Govt" ColumnName="Govt" />
+                <ScalarProperty Name="NR" ColumnName="NR" />
+                <ScalarProperty Name="NumberofBonds" ColumnName="NumberofBonds" />
+                <ScalarProperty Name="NumberofStocks" ColumnName="NumberofStocks" />
+                <ScalarProperty Name="TurnOver" ColumnName="TurnOver" />
+                <ScalarProperty Name="YieldtoMaturity" ColumnName="YieldtoMaturity" />
+                <ScalarProperty Name="DurMore10" ColumnName="DurMore10" />
+                <ScalarProperty Name="DurLess1" ColumnName="DurLess1" />
+                <ScalarProperty Name="DurLess10" ColumnName="DurLess10" />
+                <ScalarProperty Name="DurLess2" ColumnName="DurLess2" />
+                <ScalarProperty Name="DurLess3" ColumnName="DurLess3" />
+                <ScalarProperty Name="DurLess4" ColumnName="DurLess4" />
+                <ScalarProperty Name="DurLess5" ColumnName="DurLess5" />
+                <ScalarProperty Name="DurLess6" ColumnName="DurLess6" />
+                <ScalarProperty Name="DurLess7" ColumnName="DurLess7" />
+                <ScalarProperty Name="DurLess8" ColumnName="DurLess8" />
+                <ScalarProperty Name="DurLess9" ColumnName="DurLess9" />
+                <ScalarProperty Name="DurationEffective" ColumnName="DurationEffective" />
+                <ScalarProperty Name="AvgQuality" ColumnName="AvgQuality" />
+                <ScalarProperty Name="Convexity" ColumnName="Convexity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MpiHeader_Test">
+            <EntityTypeMapping TypeName="MCM.MpiHeader_Test">
+              <MappingFragment StoreEntitySet="MpiHeader_Test">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="AssetClassId" ColumnName="AssetClassId" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PROVIDER" ColumnName="PROVIDER" />
+                <ScalarProperty Name="HCAUNIVERSE" ColumnName="HCAUNIVERSE" />
+                <ScalarProperty Name="TICKER" ColumnName="TICKER" />
+                <ScalarProperty Name="CUSIP" ColumnName="CUSIP" />
+                <ScalarProperty Name="MINIMUM" ColumnName="MINIMUM" />
+                <ScalarProperty Name="GROSSNET" ColumnName="GROSSNET" />
+                <ScalarProperty Name="EXPENSERATIO" ColumnName="EXPENSERATIO" />
+                <ScalarProperty Name="PORTDATE" ColumnName="PORTDATE" />
+                <ScalarProperty Name="ASSETCLASS" ColumnName="ASSETCLASS" />
+                <ScalarProperty Name="OPENCLOSED" ColumnName="OPENCLOSED" />
+                <ScalarProperty Name="MGRBENCHMARK" ColumnName="MGRBENCHMARK" />
+                <ScalarProperty Name="HCABENCHMARK" ColumnName="HCABENCHMARK" />
+                <ScalarProperty Name="ASSETS" ColumnName="ASSETS" />
+                <ScalarProperty Name="AlternateMappingID" ColumnName="AlternateMappingID" />
+                <ScalarProperty Name="MapReturns" ColumnName="MapReturns" />
+                <ScalarProperty Name="MapReturnsBeforeOrAfter" ColumnName="MapReturnsBeforeOrAfter" />
+                <ScalarProperty Name="InceptionDate" ColumnName="InceptionDate" />
+                <ScalarProperty Name="FootNote" ColumnName="FootNote" />
+                <ScalarProperty Name="IsIndex" ColumnName="IsIndex" />
+                <ScalarProperty Name="SubType" ColumnName="SubType" />
+                <ScalarProperty Name="PrimaryBMID" ColumnName="PrimaryBMID" />
+                <ScalarProperty Name="StylusTemplate" ColumnName="StylusTemplate" />
+                <ScalarProperty Name="ACID" ColumnName="ACID" />
+                <ScalarProperty Name="StylusUnvID" ColumnName="StylusUnvID" />
+                <ScalarProperty Name="StylusFundID" ColumnName="StylusFundID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MpiReturns_Test">
+            <EntityTypeMapping TypeName="MCM.MpiReturns_Test">
+              <MappingFragment StoreEntitySet="MpiReturns_Test">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Rtndate" ColumnName="Rtndate" />
+                <ScalarProperty Name="Rtnvalue" ColumnName="Rtnvalue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAssetClasses">
+            <EntityTypeMapping TypeName="MCM.TblAssetClass">
+              <MappingFragment StoreEntitySet="TblAssetClasses">
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="BenchmarkID" ColumnName="BenchmarkID" />
+                <ScalarProperty Name="BenchmarkShortName" ColumnName="BenchmarkShortName" />
+                <ScalarProperty Name="UniverseID" ColumnName="UniverseID" />
+                <ScalarProperty Name="UniverseName" ColumnName="UniverseName" />
+                <ScalarProperty Name="AssetClassCurrentCoverage" ColumnName="AssetClassCurrentCoverage" />
+                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,15 @@
+﻿<h4>Equity Characteristics</h4>
+
+@foreach (var x in Model)
+{
+    <table class="table table-striped">
+        <tr>
+            <td>@x.MpiEquityChars_Test.PeriodEnding.ToString("dd MMM yyyy")</td>
+            <td>
+                @x.MpiEquityChars_Test.PriceToBook
+            </td>
+            <td>@x.MpiEquityChars_Test.PriceToEarnings</td>
+        </tr>
+    </table>
+}
+

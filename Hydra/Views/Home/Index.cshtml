@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<hr />
+
+<div class="jumbotron ">
+    <h1>
+        Hydra <i class="fa fa-tint "></i>
+    </h1>
+
+    <div class="lead">Highland's internal website</div>
+
+
+</div>
+
+
+<form id="productSearch" method="get" action="@Url.Action("QuickSearch", "Home")">
+    <input type="text" name="q"
+           data-autocomplete-source="@Url.Action("QuickSearch", "Home")" />
+    <input type="submit" value="search" />
+    <img id="ajax-loader" src="~/Content/Images/ajax-loader.gif"
+         style="display:none" />
+</form>
+
+<div class="row">
+    <div class="col-md-3">
+        <h3>
+            <a href="/hydra/Products">
+                Products <i class="fa fa-product-hunt"></i>
+            </a>
+        </h3>
+    </div>
+
+    <div class="col-md-3">
+        <h3>
+            <a href="/hydra/Research">
+                Research <i class="fa fa-flask"></i>
+            </a>
+        </h3>
+
+    </div>
+    <div class="col-md-3">
+        <h3>
+            <a href="/hydra/CIS">
+                CIS <i class="fa fa-handshake-o"></i>
+            </a>
+        </h3>
+    </div>
+    <div class="col-md-3">
+        <h3>
+
+            <a href="/hydra/Reports">
+                Reports <i class="fa fa-pie-chart"></i>
+            </a>
+        </h3>
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/customjs")
+}

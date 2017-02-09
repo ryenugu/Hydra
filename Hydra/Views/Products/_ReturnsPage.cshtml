@@ -1,0 +1,23 @@
+﻿<span class="detail">
+    
+    Total Reviews: {{TotalReviews}}
+</span>
+
+<table class="table-condensed small">
+    <tr>
+
+        <th>Rtndate</th>
+        <th>Rtnvalue</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>
+                @x.MpiReturns_Test.Rtndate
+            </td>
+            <td>@x.MpiReturns_Test.Rtnvalue</td>
+        </tr>
+    }
+
+</table>
