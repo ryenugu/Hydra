@@ -1,0 +1,240 @@
+﻿@model Hydra.Entities.MpiHeader_Test
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MpiHeader_Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssetClassId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssetClassId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROVIDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROVIDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HCAUNIVERSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HCAUNIVERSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TICKER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TICKER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MINIMUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MINIMUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GROSSNET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GROSSNET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXPENSERATIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXPENSERATIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORTDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORTDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASSETCLASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASSETCLASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPENCLOSED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPENCLOSED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MGRBENCHMARK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MGRBENCHMARK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HCABENCHMARK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HCABENCHMARK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASSETS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASSETS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlternateMappingID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlternateMappingID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapReturns)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapReturns)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MapReturnsBeforeOrAfter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MapReturnsBeforeOrAfter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InceptionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InceptionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FootNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FootNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaryBMID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimaryBMID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StylusTemplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StylusTemplate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StylusUnvID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StylusUnvID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StylusFundID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StylusFundID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

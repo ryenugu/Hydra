@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -219,6 +220,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\ResearchController.cs" />
+    <Compile Include="Controllers\TestAController.cs" />
     <Compile Include="Entities\MpiEquityChars_Test.cs">
       <DependentUpon>MpiModels.tt</DependentUpon>
     </Compile>
@@ -424,6 +426,12 @@
     <Content Include="Views\Products\_EquityPage.cshtml" />
     <Content Include="Views\Products\_ReturnsPage.cshtml" />
     <Content Include="Views\Research\Notes.cshtml" />
+    <Content Include="Views\Products\AddProduct.cshtml" />
+    <Content Include="Views\TestA\Create.cshtml" />
+    <Content Include="Views\TestA\Delete.cshtml" />
+    <Content Include="Views\TestA\Details.cshtml" />
+    <Content Include="Views\TestA\Edit.cshtml" />
+    <Content Include="Views\TestA\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

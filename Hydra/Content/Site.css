@@ -11,8 +11,22 @@ h4 {
 
 /**--------- Additional Responsive Style Start -----------*/
 
+.message {
+    min-height: 56px;
+    padding: 10px 10px 10px 50px;
+    border: solid 1px #4078c0;
+    border-radius: 3px;
+}
 
-
+.dashboard-notice {
+    position: relative;
+    padding: 15px 15px 15px 55px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background-color: #fafafa;
+    border: solid 1px #d8d8d8;
+    border-radius: 3px;
+}
 .ui-autocomplete-category {
     font-weight: bold;
     padding: .2em .4em;

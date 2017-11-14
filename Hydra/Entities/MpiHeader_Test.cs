@@ -6,10 +6,12 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using Dapper.Contrib.Extensions;
+using System;
 
 namespace Hydra.Entities
 {
-    using System;
+
 
     public partial class MpiHeader_Test
     {
@@ -21,7 +23,9 @@ namespace Hydra.Entities
             MpiFixedIncomeChars_Test = new MpiFixedIncomeChars_Test();
         }
     
+        [Key]
         public string CODE { get; set; }
+
         public int? AssetClassId { get; set; }
         public string NAME { get; set; }
         public string PROVIDER { get; set; }

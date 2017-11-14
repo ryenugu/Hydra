@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26020.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR", "HR\HR.csproj", "{F1143D8B-D800-41BA-8F80-7E01BA47AE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaviAlgos", "RaviAlgos\RaviAlgos.csproj", "{9C1DD2A2-579D-4F37-AC91-F7904CE9873A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1143D8B-D800-41BA-8F80-7E01BA47AE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1143D8B-D800-41BA-8F80-7E01BA47AE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1143D8B-D800-41BA-8F80-7E01BA47AE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1143D8B-D800-41BA-8F80-7E01BA47AE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1DD2A2-579D-4F37-AC91-F7904CE9873A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1DD2A2-579D-4F37-AC91-F7904CE9873A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1DD2A2-579D-4F37-AC91-F7904CE9873A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1DD2A2-579D-4F37-AC91-F7904CE9873A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -9,7 +9,7 @@ namespace Hydra.Controllers
             return View();
         }
 
-        public ActionResult Notes()
+        public ActionResult ResDocs()
         {
             return View();
         }
@@ -17,7 +17,6 @@ namespace Hydra.Controllers
         public ActionResult ShowFile()
         {
             string path = @"C:\Users\Ravindar\Desktop\ASPMVC.pdf";
-
 
             return File(path, "application /pdf");
         }

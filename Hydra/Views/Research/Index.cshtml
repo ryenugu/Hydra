@@ -1,4 +1,4 @@
-﻿<hr/>
+﻿@using Hydra.Models;
 <div class="tabbable tabs-left left-tab-process" style="margin-bottom: 25px;"/>
 <ul class="nav nav-tabs book-process-ltab text-center">
     <li class="active">
@@ -30,6 +30,18 @@
     </div>
     <div class="tab-pane" id="c">
         <p> Document Center</p>
+        @{
+
+            foreach (var item in MpiRepo.GetDocs("4"))
+            {
+           
+                <div>
+                    <a href="@Html.Raw(@Url.Content(item.DocumentLocation))">@item.DocumentDescription</a>
+
+                </div>
+            }
+        }
+
     </div>
     <div class="tab-pane" id="d">
         Search

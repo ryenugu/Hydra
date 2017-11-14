@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using Dapper.Contrib.Extensions;
+using System.Web.Mvc;
 
 namespace Hydra.Controllers
 {
@@ -6,7 +7,9 @@ namespace Hydra.Controllers
     {
         public ActionResult Index()
         {
-         return View();
+            var connection = Models.MpiRepo.TestDapper();
+            ViewBag.ProductName = connection;
+            return View();
         }
     }
 }
