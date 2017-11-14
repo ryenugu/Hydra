@@ -42,7 +42,7 @@ namespace Hydra.Models
         public static IEnumerable<ResDocModel> GetDocs(string id)
         {
             string sqlstr = "SELECT ManagerID,DocumentDate,DocumentLocation,DocumentDescription FROM HydraDocs where Managerid ='" + id + "'";
-            return _db.Query<ResDocModel>(sqlstr).OrderByDescending(X=>X.DocumentDate);
+            return _db.Query<ResDocModel>(sqlstr).OrderByDescending(X => X.DocumentDate);
         }
 
         public static IOrderedEnumerable<MpiReturns_Test> GetAllReturns()
@@ -60,9 +60,10 @@ namespace Hydra.Models
 
     public class ResDocModel
     {
-        public string ManagerID;
-        public string DocumentLocation;
-        public string DocumentDescription;
-        public DateTime DocumentDate;
+        public int ManagerID { get; set; }
+        public string DocumentLocation { get; set; }
+
+        public string DocumentDescription { get; set; }
+        public DateTime DocumentDate { get; set; }
     }
 }
