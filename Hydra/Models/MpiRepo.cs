@@ -9,7 +9,6 @@ using Hydra.Entities;
 
 namespace Hydra.Models
 {
-
     public static class MpiConn
     {
         public static readonly IDbConnection _db =
@@ -62,7 +61,6 @@ namespace Hydra.Models
     {
         public int ManagerID { get; set; }
         public string DocumentLocation { get; set; }
-
         public string DocumentDescription { get; set; }
         public DateTime DocumentDate { get; set; }
     }
