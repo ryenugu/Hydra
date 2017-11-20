@@ -16,19 +16,17 @@
     }
 }
 
-
 <div class="container">
     <p>
         @using (Html.BeginForm("Index", "Products", FormMethod.Get))
         {
-            @Html.TextBox("searchParam")<input type="submit" value="search"/>
+            @Html.TextBox("searchParam")<input type="submit" value="search" />
         }
     </p>
 </div>
 
-
 <!-- import the included stylesheet for some (very basic) default styling -->
-<link href="/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+<link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
 <div class="table-responsive">
     <table class="table table-striped table-condensed table-hover">
         <tr>
@@ -40,7 +38,6 @@
                 @Html.ActionLink("Name", "Index", Request.QueryString.ToRouteValueDictionary("sortOrder", (string) ViewBag.NameSortParam))
                 @Html.SortIdentifier(currentSort, "name")
             </th>
-
         </tr>
 
         <!-- loop through each of your products and display it however you want. we're just printing the name here -->
@@ -78,16 +75,13 @@
                         </td>
                         <td>
                             <b>@product.RRD</b>
-
                         </td>
                     </tr>
                 </table>
             </tr>
         }
     </table>
-
 </div>
-
 
 <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 @Html.PagedListPager((IPagedList) ViewBag.OnePageOfProducts, page => Url.Action("Index", new {page}))

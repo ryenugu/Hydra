@@ -1,24 +1,22 @@
-﻿using System.Web.Mvc;
+﻿using Hydra.Models;
+using System.Web.Mvc;
 
 namespace Hydra.Controllers
 {
     public class ResearchController : Controller
     {
+        // GET: Home
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ResDocs()
+        [HttpPost]
+        public JsonResult Index(string Prefix)
         {
-            return View();
-        }
-
-        public ActionResult ShowFile()
-        {
-            string path = @"C:\Users\Ravindar\Desktop\ASPMVC.pdf";
-
-            return File(path, "application /pdf");
+            var elist = MpiRepo.FillManagers(Prefix);
+            return Json(elist);
         }
     }
 }

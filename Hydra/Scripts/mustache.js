@@ -17,8 +17,7 @@
             root.Mustache = mustache; // <script>
         }
     }
-} (this, function (mustache) {
-
+}(this, function (mustache) {
     var whiteRe = /\s*/;
     var spaceRe = /\s+/;
     var nonSpaceRe = /\S/;
@@ -532,5 +531,4 @@
             return result;
         }
     };
-
 }));

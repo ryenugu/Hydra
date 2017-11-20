@@ -271,6 +271,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\highland-styles.min.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\hydra.png" />
     <Content Include="Content\landing-page-custom.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -338,6 +339,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <None Include=".bin\node.cmd" />
     <None Include="Scripts\jquery-2.1.0-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
@@ -432,6 +434,8 @@
     <Content Include="Views\TestA\Details.cshtml" />
     <Content Include="Views\TestA\Edit.cshtml" />
     <Content Include="Views\TestA\Index.cshtml" />
+    <Content Include="Views\Research\FillMgr.cshtml" />
+    <Content Include="Views\Research\AutoManagers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

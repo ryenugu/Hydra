@@ -2140,7 +2140,6 @@ angular.module('ui.bootstrap.position', [])
     var BODY_REGEX = /(HTML|BODY)/;
 
     return {
-
       /**
        * Provides a raw DOM element from a jQuery/jQLite element.
        *
@@ -3902,7 +3901,6 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.multiMap', 'ui.bootstrap.sta
             });
           }
 
-
           $q.when(animationPromise).then(function() {
             // Notify {@link $modalStack} that modal is rendered.
             var modal = $modalStack.getTop();
@@ -5240,7 +5238,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
 
               if (tooltip) {
                 tooltip.remove();
-                
+
                 tooltip = null;
                 if (adjustmentTimeout) {
                   $timeout.cancel(adjustmentTimeout);
@@ -5248,7 +5246,7 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
               }
 
               openedTooltips.remove(ttScope);
-              
+
               if (tooltipLinkedScope) {
                 tooltipLinkedScope.$destroy();
                 tooltipLinkedScope = null;
@@ -6526,7 +6524,6 @@ angular.module('ui.bootstrap.timepicker', [])
         });
       }
     });
-
   };
 
   this.render = function() {

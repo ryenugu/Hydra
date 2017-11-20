@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Hydra.Startup))]
+
 namespace Hydra
 {
     public partial class Startup

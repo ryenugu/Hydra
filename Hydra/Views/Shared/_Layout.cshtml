@@ -8,14 +8,13 @@
     <title>@ViewBag.Title - Hydra</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
 
     @Scripts.Render("~/bundles/mustache")
-   
-    @RenderSection("CustomScripts", false)
 
+    @RenderSection("CustomScripts", false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,8 +34,6 @@
                     <li>@Html.ActionLink("Research", "Index", "Research")</li>
                     <li>@Html.ActionLink("CIS", "Index", "CIS")</li>
                     <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
-
-
                 </ul>
                 @Html.Partial("_LoginPartial")
                 <p>
@@ -44,12 +41,8 @@
                     {
                         @Html.TextBox("searchParam")<input type="submit" value="search" />
                     }
-
                 </p>
-
-
             </div>
-
         </div>
     </div>
     <div class="body body-container">
@@ -60,8 +53,6 @@
         </footer>
     </div>
 
-
-    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

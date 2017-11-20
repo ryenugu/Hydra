@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Dapper;
+using Hydra.Entities;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using Dapper;
-using Hydra.Entities;
 
 namespace Hydra.Models
 {
@@ -19,7 +19,7 @@ namespace Hydra.Models
         public IEnumerable<MpiHeader_Test> GetProductReturns()
         {
             var resultList = _db.Query<MpiHeader_Test, MpiReturns_Test, MpiHeader_Test>(@"
-                    SELECT a.Code, a.Name, 
+                    SELECT a.Code, a.Name,
                             s.Code, s.Rtndate, s.Rtnvalue
                     FROM Mpiheader_Test a
                     INNER JOIN Mpireturns_Test s ON s.Code = a.Code
@@ -37,7 +37,7 @@ namespace Hydra.Models
         public List<MpiHeader_Test> GetEquityChars()
         {
             var resultList = _db.Query<MpiHeader_Test, MpiEquityChars_Test, MpiHeader_Test>(@"
-                    SELECT a.Code, a.Name, 
+                    SELECT a.Code, a.Name,
                             s.*
                     FROM Mpiheader_Test a
                     INNER JOIN Mpiequitychars_Test s ON s.Productid = a.Code

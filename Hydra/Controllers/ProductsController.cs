@@ -1,17 +1,16 @@
-﻿using System.Linq;
-using System.Net;
-using System.Web.Mvc;
+﻿using Dapper.Contrib.Extensions;
+using Hydra.Entities;
 using Hydra.Models;
 using PagedList;
 using System.Data;
-using Dapper.Contrib.Extensions;
-using Hydra.Entities;
+using System.Linq;
+using System.Net;
+using System.Web.Mvc;
 
 namespace Hydra.Controllers
 {
     public class ProductsController : Controller
     {
-
         // GET: Employee/AddProduct
         public ActionResult AddProduct()
         {
@@ -32,14 +31,13 @@ namespace Hydra.Controllers
             //};
             try
             {
-
                 //Gets a value that indicates whether this instance received from the view is valid.
                 if (ModelState.IsValid)
                 {
                     var db = MpiConn._db;
                     // Adds to the context
                     db.Insert(product);
-                    // Persist the data 
+                    // Persist the data
 
                     // Returns an HTTP 302 response to the browser, which causes the browser to make a GET request to the specified action, in this case the index action.
                     return RedirectToAction("Index");
@@ -53,6 +51,7 @@ namespace Hydra.Controllers
             // view = default in this case Create and model = student
             return View(product);
         }
+
         public object Index(string searchParam, string sortOrder, string q, int page = 1, int pageSize = 25)
         {
             ViewBag.searchQuery = string.IsNullOrEmpty(q) ? "" : q;
@@ -63,9 +62,7 @@ namespace Hydra.Controllers
             ViewBag.CodeSortParam = sortOrder == "code" ? "code_desc" : "code";
             ViewBag.NameSortParam = sortOrder == "name" ? "name_desc" : "name";
 
-
             ViewBag.CurrentSort = sortOrder;
-
 
             var productreturns =
                 from r in MpiRepo.GetAllReturns()
@@ -77,7 +74,6 @@ namespace Hydra.Controllers
                     RRD = g.Max(x => x.Rtndate),
                 };
             var products = MpiRepo.GetProducts();
-
 
             var resultproducts = from r in productreturns
                                  join s in products on r.cd equals s.CODE
@@ -91,24 +87,25 @@ namespace Hydra.Controllers
                                  };
             var pageNumber = page; // if no page was specified in the querystring, default to the first page (1)
 
-
             // will only contain 25 products max because of the pageSize
             switch (sortOrder)
             {
                 case "name":
                     resultproducts = resultproducts.OrderBy(x => x.Name);
                     break;
+
                 case "code":
                     resultproducts = resultproducts.OrderBy(x => x.Code);
                     break;
+
                 case "name_desc":
                     resultproducts = resultproducts.OrderByDescending(x => x.Name);
                     break;
+
                 case "code_desc":
                     resultproducts = resultproducts.OrderByDescending(x => x.Code);
                     break;
             }
-
 
             if (!string.IsNullOrEmpty(searchParam))
             {
@@ -123,7 +120,6 @@ namespace Hydra.Controllers
             return View();
         }
 
-
         //Opens a product showcase on clicking on product id,name etc
         public ActionResult Showcase(string id)
         {
@@ -135,7 +131,6 @@ namespace Hydra.Controllers
             var xcm = new ShowCaseViewModel();
             xcm.ReturnItems = xcm.GetProductReturns().Where(x => x.CODE == id);
             xcm.EquityItems = xcm.GetEquityChars().Where(x => x.CODE == id);
-
 
             return View(xcm);
         }

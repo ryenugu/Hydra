@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Res_Managers";
+}
+
+<h2>Res_Managers</h2>
+@using (Html.BeginForm("FillMgr", "Research", FormMethod.Get))
+{
+
+    <fieldset>
+
+        Movie Type
+
+        @Html.DropDownList("Managers")
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+
+}
+
+

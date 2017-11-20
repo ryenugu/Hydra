@@ -1,47 +1,49 @@
 ﻿@model Hydra.Models.ShowCaseViewModel
 <h2>Welcome To Product Showcase</h2>
-<hr/>
-<div class="tabbable tabs-left left-tab-process" style="margin-bottom: 25px;"/>
+<hr />
+<div class="tabbable tabs-left left-tab-process" style="margin-bottom: 25px;" />
 <ul class="nav nav-tabs book-process-ltab text-center">
     <li class="active">
-        <a href="#a" data-toggle="tab">Returns</a>
+        <a href="#a" data-toggle="tab">General Info</a>
     </li>
     <li class="">
-        <a href="#b" data-toggle="tab">Characteristics</a>
+        <a href="#b" data-toggle="tab">Returns</a>
     </li>
     <li class="">
-        <a href="#c" data-toggle="tab">Reports</a>
-    </li>
-    <li class="">
-        <a href="#d" data-toggle="tab">Private Equity</a>
-    </li>
-    <li class="">
-        <a href="#e" data-toggle="tab">Misc</a>
+        <a href="#c" data-toggle="tab">Characteristics</a>
     </li>
 
+    <li class="">
+        <a href="#d" data-toggle="tab">Notes</a>
+    </li>
+    <li class="">
+        <a href="#e" data-toggle="tab">Docs</a>
+    </li>
+    <li class="">
+        <a href="#f" data-toggle="tab">Reports</a>
+    </li>
 </ul>
 
-
 <div class="tab-content">
-
     <div class="tab-pane active" id="a">
-        @Html.Partial("_ReturnsPage", Model.ReturnItems)
-
+        General Information
     </div>
-
-    <div class="tab-pane" id="b">
-        @Html.Partial("_EquityPage", Model.EquityItems)
+    <div class="tab-pane " id="b">
+        @Html.Partial("_ReturnsPage", Model.ReturnItems)
     </div>
 
     <div class="tab-pane" id="c">
-        <p> Reports</p>
+        @Html.Partial("_EquityPage", Model.EquityItems)
     </div>
+
     <div class="tab-pane" id="d">
-        Private Equity
+        Notes
     </div>
     <div class="tab-pane" id="e">
-        Misc
+        Docs
     </div>
 
-
+    <div class="tab-pane" id="f">
+        <p> Reports</p>
+    </div>
 </div>

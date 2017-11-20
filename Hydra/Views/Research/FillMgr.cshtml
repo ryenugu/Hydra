@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "abc";
+}
+
+@*Will display Managers in the Drodownlist from Research controller rendered partial in the index*@
+<div>
+    <p>Select a Manager: </p>
+    @Html.DropDownList("ManagerId", ViewBag.Managers as SelectList, new  { @class="form-data" })
+</div>
+@if (ViewBag.YouSelected != null) {
+
+    <div> You Selected:  @ViewBag.YouSelected</div>
+
+}
+<p>
+
+    <input type="submit" value="Save" />
+</p>

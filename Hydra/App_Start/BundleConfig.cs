@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Hydra
 {
@@ -19,10 +18,8 @@ namespace Hydra
             bundles.Add(new ScriptBundle("~/bundles/mustache").Include(
                 "~/Scripts/mustache.js"));
 
-
             bundles.Add(new ScriptBundle("~/bundles/customjs").Include(
                 "~/Scripts/JS/Site.js"));
-
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
@@ -30,8 +27,6 @@ namespace Hydra
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
-
-
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
 

@@ -6,20 +6,20 @@
 
 <div class="jumbotron ">
     <h1>
-        Hydra <i class="fa fa-tint "></i>
+        Hydra <img src=@Url.Content("~/Content/Images/hydra.png") />
     </h1>
 
-    <div class="lead">Highland's internal website</div>
-
-
+    <div class="lead">
+        Highland's internal website
+    </div>
 </div>
-
 
 <form id="productSearch" method="get" action="@Url.Action("QuickSearch", "Home")">
     <input type="text" name="q"
            data-autocomplete-source="@Url.Action("QuickSearch", "Home")" />
     <input type="submit" value="search" />
-    <img id="ajax-loader" src="~/Content/Images/ajax-loader.gif"
+
+    <img id="ajax-loader" src="~/Content/Images/hydra.png"
          style="display:none" />
 </form>
 
@@ -38,7 +38,6 @@
                 Research <i class="fa fa-flask"></i>
             </a>
         </h3>
-
     </div>
     <div class="col-md-3">
         <h3>
@@ -55,10 +54,7 @@
             </a>
         </h3>
     </div>
-
-
 </div>
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/customjs")
