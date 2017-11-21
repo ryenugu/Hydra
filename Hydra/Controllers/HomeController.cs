@@ -33,6 +33,13 @@ namespace Hydra.Controllers
             return Json(products, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult AutoComplete(string term)
+        {
+            var products = GetMyProducts(term).Select(a => new { label = a.NAME, id = a.CODE });
+            return Json(products, JsonRequestBehavior.AllowGet);
+        }
+
         private IEnumerable<MpiHeader_Test> GetMyProducts(string searchString)
         {
             var pds = MpiRepo.GetProducts();
