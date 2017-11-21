@@ -65,6 +65,13 @@ namespace Hydra.Models
 
             return _db.Query<Manager>(sqlstr).OrderBy(x => x.ManagerName);
         }
+
+        public static IEnumerable<Manager> FillManagers()
+        {
+            string sqlstr = "select ManagerId,ManagerName from  TblManagers";
+
+            return _db.Query<Manager>(sqlstr).OrderBy(x => x.ManagerName);
+        }
     }
 
     public class Manager
@@ -85,5 +92,13 @@ namespace Hydra.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+    }
+
+    public class Product : MpiHeader_Test
+    {
+        public string Code;
+        public string Name { get { return NAME; } set { NAME = Name; } }
+        public string Type { get { return SubType; } set { Type = SubType; } }
+        public bool? isIndex { get; set; }
     }
 }

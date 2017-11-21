@@ -15,14 +15,14 @@ namespace Hydra.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Hydra is Highlands Internal Website.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact research@highlandusa.net with questions";
 
             return View();
         }

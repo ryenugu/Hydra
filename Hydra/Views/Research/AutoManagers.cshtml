@@ -1,47 +1,60 @@
-﻿@model Hydra.Models.Manager
-@{
+﻿<!DOCTYPE html>
 
-}
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        $("#CityName").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    url: "/Research/Index",
-                    type: "POST",
-                    dataType: "json",
-                    data: { Prefix: request.term },
-                    success: function (data) {
-                        response($.map(data, function (item) {
-                            return { label: item.Name, value: item.Name };
-                        }))
-
-                    }
-                })
-            },
-            messages: {
-                noResults: "", results: ""
-            }
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
+          rel="Stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(function () {
+            $("#txtManagerName").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("AutoComplete", "Research")',
+                        data: "{ 'prefix': '" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return item;
+                            }))
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                },
+                select: function (e, i) {
+                    $("#hfManagerID").val(i.item.val);
+                },
+                minLength: 1
+            });
         });
-    })
-</script>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    </script>
+    @using (Html.BeginForm("Index", "Research", FormMethod.Post))
+    {
+        <input type="text" id="txtManagerName" name="ManagerName" />
 
-    <div class="form-horizontal">
-
-        <hr />
-
-        <div class="form-group">
-
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.ManagerName, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
-    </div>
-}  
+        <input type="hidden" id="hfManagerID" name="ManagerId" />
+        <br /><br />
+        <input type="submit" id="btnSubmit" value="Submit" />
+        <br /><br />
+        @ViewBag.Message
+    }
+</body>
+</html>
